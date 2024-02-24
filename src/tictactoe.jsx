@@ -130,5 +130,3 @@ function isSuperset(set, subset) {
   }
   return true;
 }
-
-export default Board;
