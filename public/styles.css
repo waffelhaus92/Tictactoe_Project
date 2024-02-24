@@ -1,6 +1,6 @@
 button {
-    background-color: #0c80f3;
-    border: 6px solid #0ff166;
+    background-color: #0d7527;
+    border: 6px solid #e76c25c7;
     border-radius: 10px;
   }
   
@@ -8,7 +8,7 @@ button {
     width: 600px;
     height: 600px;
     margin: 0 auto;
-    background-color: #34495e;
+    background-color: #083e74;
     color: white;
     border: 6px solid #0b0d0f;
     border-radius: 10px;
@@ -39,7 +39,7 @@ button {
   }
   
   .red {
-    color: red;
+    color: black;
   }
   
   .white {

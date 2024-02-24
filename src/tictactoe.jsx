@@ -1,10 +1,12 @@
-const Board = () => {
+import React from "react";
+
+export const Board = () => {
   // 1st player is X ie 1
   // State keeps track of next player and gameState
   const [player, setPlayer] = React.useState(1);
   const [gameState, setGameState] = React.useState([]);
   let status = `Winner is ${checkForWinner(gameState)}`;
-  const nextPlayer = player === 0 ? 'Player 0' : 'Player X';
+  const nextPlayer = player === 0 ? "Player 0" : "Player X";
   // Part 1 step 1 code goes here
   // Use conditional logic to set a variable to either 'Player O' or  'Player X'
 
@@ -46,7 +48,7 @@ const Board = () => {
 };
 
 const Square = ({ takeTurn, id }) => {
-  const mark = ['O', 'X', '+'];
+  const mark = ["O", "X", "+"];
   // id is the square's number
   // filled tells you if square has been filled
   // tik tells you symbol in square (same as player)
@@ -57,7 +59,7 @@ const Square = ({ takeTurn, id }) => {
   return (
     <button
       // Part 2: update the return statement below to add css classes
-      className={`square ${tik === 1 ? 'red' : 'white'}`}
+      className={`square ${tik === 1 ? "red" : "white"}`}
       onClick={() => {
         setTik(takeTurn(id));
         setFilled(true);
@@ -76,11 +78,6 @@ const Game = () => {
     </div>
   );
 };
-
-// Checking for Winner takes a bit of work
-// Use JavaScript Sets to check players choices
-// against winning combinations
-// Online there is more compact version but Dr. Williams prefers this one
 
 const win = [
   // rows
@@ -103,7 +100,7 @@ const checkPlayerTurn = (gameState) => {
 const checkForWinner = (gameState) => {
   // get array of box id's
   // can't be a winner in less than 5 turns
-  if (gameState.length < 5) return 'No Winner Yet';
+  if (gameState.length < 5) return "No Winner Yet";
   let p0 = gameState.filter((item) => {
     if (item.player == 0) return item;
   });
@@ -120,9 +117,9 @@ const checkForWinner = (gameState) => {
       return isSuperset(new Set(px), new Set(item));
     });
   }
-  if (win0.length > 0) return 'Player O ';
-  else if (winX.length > 0) return 'Player X ';
-  return 'No Winner Yet';
+  if (win0.length > 0) return "Player O ";
+  else if (winX.length > 0) return "Player X ";
+  return "No Winner Yet";
 };
 // check if subset is in the set
 function isSuperset(set, subset) {
@@ -134,6 +131,4 @@ function isSuperset(set, subset) {
   return true;
 }
 
-// ========================================
-
-ReactDOM.render(<Game />, document.getElementById('root'));
+export default Board;
